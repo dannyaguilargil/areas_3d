@@ -1,0 +1,78 @@
+/* WA CTA */
+.wa-cta {
+  padding: 64px 28px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 106, 0, 0.1),
+    rgba(0, 194, 255, 0.1)
+  );
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.wa-cta h2 {
+  font-family: var(--font-orbitron);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 12px 0;
+}
+
+.wa-cta p {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  max-width: 480px;
+  margin: 0 auto 28px;
+  line-height: 1.7;
+}
+
+.wa-big-btn {
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  padding: 15px 36px;
+  border-radius: 40px;
+  font-family: var(--font-orbitron);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wa-big-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(37, 211, 102, 0.35);
+}
+
+.wa-small {
+  font-size: 12px;
+  color: rgba(239, 239, 239, 0.3);
+  margin: 14px 0 0 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .wa-cta {
+    padding: 40px 16px;
+  }
+
+  .wa-cta h2 {
+    font-size: 20px;
+  }
+
+  .wa-cta p {
+    font-size: 14px;
+  }
+
+  .wa-big-btn {
+    padding: 12px 28px;
+    font-size: 12px;
+  }
+}
