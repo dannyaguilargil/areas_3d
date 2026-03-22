@@ -15,6 +15,14 @@ function Gallery() {
     return galleryItems.filter(item => item.category === selectedCategory);
   }, [selectedCategory]);
 
+  const groupedItems = useMemo(() => {
+    if (selectedCategory !== 'todos') return {};
+    return categories.slice(1).reduce((acc, cat) => {
+      acc[cat.id] = galleryItems.filter(item => item.category === cat.id);
+      return acc;
+    }, {});
+  }, [selectedCategory]);
+
   const handleItemClick = (item) => {
     setSelectedItem(item);
   };
@@ -39,20 +47,39 @@ function Gallery() {
               className={`filter-btn ${selectedCategory === category.id ? 'active' : ''}`}
               onClick={() => setSelectedCategory(category.id)}
             >
-              {category.label}
+              {category.name}
             </button>
           ))}
         </div>
 
-        <div className="gallery-grid">
-          {filteredItems.map(item => (
-            <GalleryItem
-              key={item.id}
-              item={item}
-              onClick={() => handleItemClick(item)}
-            />
-          ))}
-        </div>
+        {selectedCategory === 'todos' ? (
+          categories.slice(1).map(category => (
+            groupedItems[category.id] && groupedItems[category.id].length > 0 && (
+              <div key={category.id} className="category-section">
+                <h3 className="category-title">{category.name}</h3>
+                <div className="gallery-grid">
+                  {groupedItems[category.id].map(item => (
+                    <GalleryItem
+                      key={item.id}
+                      item={item}
+                      onClick={() => handleItemClick(item)}
+                    />
+                  ))}
+                </div>
+              </div>
+            )
+          ))
+        ) : (
+          <div className="gallery-grid">
+            {filteredItems.map(item => (
+              <GalleryItem
+                key={item.id}
+                item={item}
+                onClick={() => handleItemClick(item)}
+              />
+            ))}
+          </div>
+        )}
       </section>
 
       {selectedItem && (

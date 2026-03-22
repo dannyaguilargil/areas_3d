@@ -4,7 +4,7 @@ import './Gallery.css';
 function GalleryItem({ item, onClick }) {
   return (
     <div className="gallery-item" onClick={onClick}>
-      <img src={item.image} alt={item.title} className="gallery-thumb" />
+      <img src={item.image} alt={item.title} className="gallery-thumb" loading="lazy" />
       
       <div className="gallery-overlay">
         <span className="gallery-overlay-title">{item.title}</span>

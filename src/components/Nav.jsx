@@ -17,7 +17,6 @@ function Nav() {
       <ul className="nav-links">
         <li><a href="#gallery">Galería</a></li>
         <li><a href="#contacto">Contacto</a></li>
-        <li><a href="#about">Sobre Nosotros</a></li>
       </ul>
       
       <button className="nav-wa" onClick={handleWhatsAppClick}>

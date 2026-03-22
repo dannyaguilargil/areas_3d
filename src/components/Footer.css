@@ -95,6 +95,10 @@
   margin-bottom: 4px;
 }
 
+.footer-credit {
+  color: #00c2ff; /* Blue color */
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .footer {
