@@ -4,7 +4,7 @@ import LogoCube from './LogoCube';
 
 function Nav() {
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/', '_blank');
+    window.open('https://wa.me/c/573171674712', '_blank');
   };
 
   return (

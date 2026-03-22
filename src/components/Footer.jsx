@@ -10,7 +10,7 @@ function Footer() {
         <div className="footer-top">
           <div>
             <div className="footer-logo">
-              ÁREAS <span>3D</span>
+              ÁREAS 3D
             </div>
             <p className="footer-desc">
               Galería de modelos y espacios tridimensionales de última generación.
