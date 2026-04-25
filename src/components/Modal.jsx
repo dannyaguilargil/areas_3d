@@ -25,8 +25,8 @@ function Modal({ item, onClose }) {
   };
 
   const handleWhatsAppClick = () => {
-    const message = `Hola, estoy interesado en: ${item.title}`;
-    window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
+    const message = `Quiero más información acerca del producto ${item.title}`;
+    window.open(`https://wa.me/573171674712?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (
